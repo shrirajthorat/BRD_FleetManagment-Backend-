@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Customer)">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="customerId" ColumnName="customerId" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="emailId" ColumnName="emailId" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="cellNo" ColumnName="cellNo" />
+          <ScalarProperty Name="creditcardType" ColumnName="creditcardType" />
+          <ScalarProperty Name="creditcard_Number" ColumnName="creditcard_Number" />
+          <ScalarProperty Name="drivingLiscen_Number" ColumnName="drivingLiscen_Number" />
+          <ScalarProperty Name="validThrough" ColumnName="validThrough" />
+          <ScalarProperty Name="passport_Number" ColumnName="passport_Number" />
+          <ScalarProperty Name="passport_valid" ColumnName="passport_valid" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.CarCategories)">
+        <MappingFragment StoreEntitySet="CarCategories">
+          <ScalarProperty Name="weeklyRates" ColumnName="weeklyRates" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+          <ScalarProperty Name="imagePath" ColumnName="imagePath" />
+          <ScalarProperty Name="dailyRates" ColumnName="dailyRates" />
+          <ScalarProperty Name="monthlyRates" ColumnName="monthlyRates" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cars">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Car)">
+        <MappingFragment StoreEntitySet="Cars">
+          <ScalarProperty Name="carId" ColumnName="carId" />
+          <ScalarProperty Name="carName" ColumnName="carName" />
+          <ScalarProperty Name="carNoPlate" ColumnName="carNoPlate" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+          <ScalarProperty Name="fuelType" ColumnName="fuelType" />
+          <ScalarProperty Name="availability" ColumnName="availability" />
+          <ScalarProperty Name="CarCategories_categoryId" ColumnName="CarCategories_categoryId" />
+          <ScalarProperty Name="Hub_hubId" ColumnName="Hub_hubId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hubs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Hub)">
+        <MappingFragment StoreEntitySet="Hubs">
+          <ScalarProperty Name="hubId" ColumnName="hubId" />
+          <ScalarProperty Name="hubName" ColumnName="hubName" />
+          <ScalarProperty Name="contactNumber" ColumnName="contactNumber" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="stateId" ColumnName="stateId" />
+          <ScalarProperty Name="City_cityId" ColumnName="City_cityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.City)">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="cityId" ColumnName="cityId" />
+          <ScalarProperty Name="cityName" ColumnName="cityName" />
+          <ScalarProperty Name="State_stateId" ColumnName="State_stateId" />
+          <ScalarProperty Name="airportcode" ColumnName="airportcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.State)">
+        <MappingFragment StoreEntitySet="States">
+          <ScalarProperty Name="stateId" ColumnName="stateId" />
+          <ScalarProperty Name="stateName" ColumnName="stateName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Employee)">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="empId" ColumnName="empId" />
+          <ScalarProperty Name="empName" ColumnName="empName" />
+          <ScalarProperty Name="empMobNo" ColumnName="empMobNo" />
+          <ScalarProperty Name="empMailId" ColumnName="empMailId" />
+          <ScalarProperty Name="empAddress" ColumnName="empAddress" />
+          <ScalarProperty Name="empSalary" ColumnName="empSalary" />
+          <ScalarProperty Name="empPassword" ColumnName="empPassword" />
+          <ScalarProperty Name="Hub_hubId" ColumnName="Hub_hubId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Booking)">
+        <MappingFragment StoreEntitySet="Bookings">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="bookingId" ColumnName="bookingId" />
+          <ScalarProperty Name="bookingdateAndTime" ColumnName="bookingdateAndTime" />
+          <ScalarProperty Name="customerFirstName" ColumnName="customerFirstName" />
+          <ScalarProperty Name="customerLastName" ColumnName="customerLastName" />
+          <ScalarProperty Name="customerMobileNo" ColumnName="customerMobileNo" />
+          <ScalarProperty Name="usermailId" ColumnName="usermailId" />
+          <ScalarProperty Name="customerDLNo" ColumnName="customerDLNo" />
+          <ScalarProperty Name="dropdateAndTime" ColumnName="dropdateAndTime" />
+          <ScalarProperty Name="Hub_hubId" ColumnName="Hub_hubId" />
+          <ScalarProperty Name="City_cityId" ColumnName="City_cityId" />
+          <ScalarProperty Name="State_stateId" ColumnName="State_stateId" />
+          <ScalarProperty Name="CarCategories_categoryId" ColumnName="CarCategories_categoryId" />
+          <ScalarProperty Name="Customer_customerId" ColumnName="Customer_customerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Billings">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Billing)">
+        <MappingFragment StoreEntitySet="Billings">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="billingId" ColumnName="billingId" />
+          <ScalarProperty Name="CarCategories_categoryId" ColumnName="CarCategories_categoryId" />
+          <ScalarProperty Name="Car_carId" ColumnName="Car_carId" />
+          <ScalarProperty Name="Booking_bookingId" ColumnName="Booking_bookingId" />
+          <ScalarProperty Name="Customer_customerId" ColumnName="Customer_customerId" />
+          <ScalarProperty Name="billingName" ColumnName="billingName" />
+          <ScalarProperty Name="fuelStatus" ColumnName="fuelStatus" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="userMailid" ColumnName="userMailid" />
+          <ScalarProperty Name="customerMobNo" ColumnName="customerMobNo" />
+          <ScalarProperty Name="Hub_hubId" ColumnName="Hub_hubId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ammenities">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Ammenities)">
+        <MappingFragment StoreEntitySet="Ammenities">
+          <ScalarProperty Name="ammenitiesId" ColumnName="ammenitiesId" />
+          <ScalarProperty Name="ammenitiesName" ColumnName="ammenitiesName" />
+          <ScalarProperty Name="ammenitiesRate" ColumnName="ammenitiesRate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

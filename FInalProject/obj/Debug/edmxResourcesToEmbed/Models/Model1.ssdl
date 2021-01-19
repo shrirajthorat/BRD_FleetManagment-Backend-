@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Ammenities" EntityType="Model1.Store.Ammenities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Billings" EntityType="Model1.Store.Billings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bookings" EntityType="Model1.Store.Bookings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CarCategories" EntityType="Model1.Store.CarCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cars" EntityType="Model1.Store.Cars" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cities" EntityType="Model1.Store.Cities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customers" EntityType="Model1.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employees" EntityType="Model1.Store.Employees" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hubs" EntityType="Model1.Store.Hubs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="States" EntityType="Model1.Store.States" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_BookingBilling" Association="Model1.Store.FK_BookingBilling">
+      <End Role="Bookings" EntitySet="Bookings" />
+      <End Role="Billings" EntitySet="Billings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarBilling" Association="Model1.Store.FK_CarBilling">
+      <End Role="Cars" EntitySet="Cars" />
+      <End Role="Billings" EntitySet="Billings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarCategoriesBilling" Association="Model1.Store.FK_CarCategoriesBilling">
+      <End Role="CarCategories" EntitySet="CarCategories" />
+      <End Role="Billings" EntitySet="Billings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarCategoriesBooking" Association="Model1.Store.FK_CarCategoriesBooking">
+      <End Role="CarCategories" EntitySet="CarCategories" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarCategoriesCar" Association="Model1.Store.FK_CarCategoriesCar">
+      <End Role="CarCategories" EntitySet="CarCategories" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CityBooking" Association="Model1.Store.FK_CityBooking">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CityHub" Association="Model1.Store.FK_CityHub">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="Hubs" EntitySet="Hubs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerBilling" Association="Model1.Store.FK_CustomerBilling">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Billings" EntitySet="Billings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerBooking" Association="Model1.Store.FK_CustomerBooking">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hub_Id" Association="Model1.Store.FK_hub_Id">
+      <End Role="Hubs" EntitySet="Hubs" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HubBilling" Association="Model1.Store.FK_HubBilling">
+      <End Role="Hubs" EntitySet="Hubs" />
+      <End Role="Billings" EntitySet="Billings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HubBooking" Association="Model1.Store.FK_HubBooking">
+      <End Role="Hubs" EntitySet="Hubs" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HubEmployee" Association="Model1.Store.FK_HubEmployee">
+      <End Role="Hubs" EntitySet="Hubs" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StateBooking" Association="Model1.Store.FK_StateBooking">
+      <End Role="States" EntitySet="States" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StateCity" Association="Model1.Store.FK_StateCity">
+      <End Role="States" EntitySet="States" />
+      <End Role="Cities" EntitySet="Cities" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Ammenities">
+    <Key>
+      <PropertyRef Name="ammenitiesId" />
+    </Key>
+    <Property Name="ammenitiesId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ammenitiesName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ammenitiesRate" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Billings">
+    <Key>
+      <PropertyRef Name="billingId" />
+    </Key>
+    <Property Name="billingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CarCategories_categoryId" Type="int" Nullable="false" />
+    <Property Name="Car_carId" Type="int" />
+    <Property Name="Booking_bookingId" Type="int" Nullable="false" />
+    <Property Name="Customer_customerId" Type="int" Nullable="false" />
+    <Property Name="billingName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fuelStatus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="startDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="endDate" Type="nvarchar(max)" />
+    <Property Name="userMailid" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="customerMobNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Hub_hubId" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" />
+  </EntityType>
+  <EntityType Name="Bookings">
+    <Key>
+      <PropertyRef Name="bookingId" />
+    </Key>
+    <Property Name="bookingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="bookingdateAndTime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="customerFirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="customerLastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="customerMobileNo" Type="bigint" Nullable="false" />
+    <Property Name="usermailId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="customerDLNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dropdateAndTime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Hub_hubId" Type="int" Nullable="false" />
+    <Property Name="City_cityId" Type="int" Nullable="false" />
+    <Property Name="State_stateId" Type="int" Nullable="false" />
+    <Property Name="CarCategories_categoryId" Type="int" Nullable="false" />
+    <Property Name="Customer_customerId" Type="int" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" />
+    <Property Name="Amount" Type="int" />
+  </EntityType>
+  <EntityType Name="CarCategories">
+    <Key>
+      <PropertyRef Name="categoryId" />
+    </Key>
+    <Property Name="categoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="categoryName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="imagePath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dailyRates" Type="decimal" Nullable="false" />
+    <Property Name="monthlyRates" Type="decimal" Nullable="false" />
+    <Property Name="weeklyRates" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cars">
+    <Key>
+      <PropertyRef Name="carId" />
+    </Key>
+    <Property Name="carId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="carName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="carNoPlate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="capacity" Type="int" Nullable="false" />
+    <Property Name="fuelType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="availability" Type="int" Nullable="false" />
+    <Property Name="CarCategories_categoryId" Type="int" Nullable="false" />
+    <Property Name="Hub_hubId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="cityId" />
+    </Key>
+    <Property Name="cityId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cityName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="State_stateId" Type="int" Nullable="false" />
+    <Property Name="airportcode" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="customerId" />
+    </Key>
+    <Property Name="customerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="emailId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="city" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cellNo" Type="bigint" Nullable="false" />
+    <Property Name="creditcardType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="creditcard_Number" Type="bigint" Nullable="false" />
+    <Property Name="drivingLiscen_Number" Type="bigint" Nullable="false" />
+    <Property Name="validThrough" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="passport_Number" Type="bigint" Nullable="false" />
+    <Property Name="passport_valid" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="empId" />
+    </Key>
+    <Property Name="empId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="empName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="empMobNo" Type="bigint" Nullable="false" />
+    <Property Name="empMailId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="empAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="empSalary" Type="int" Nullable="false" />
+    <Property Name="empPassword" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Hub_hubId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hubs">
+    <Key>
+      <PropertyRef Name="hubId" />
+    </Key>
+    <Property Name="hubId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="hubName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="contactNumber" Type="bigint" Nullable="false" />
+    <Property Name="address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="stateId" Type="int" Nullable="false" />
+    <Property Name="City_cityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="stateId" />
+    </Key>
+    <Property Name="stateId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="stateName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BookingBilling">
+    <End Role="Bookings" Type="Model1.Store.Bookings" Multiplicity="1" />
+    <End Role="Billings" Type="Model1.Store.Billings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bookings">
+        <PropertyRef Name="bookingId" />
+      </Principal>
+      <Dependent Role="Billings">
+        <PropertyRef Name="Booking_bookingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarBilling">
+    <End Role="Cars" Type="Model1.Store.Cars" Multiplicity="0..1" />
+    <End Role="Billings" Type="Model1.Store.Billings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cars">
+        <PropertyRef Name="carId" />
+      </Principal>
+      <Dependent Role="Billings">
+        <PropertyRef Name="Car_carId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarCategoriesBilling">
+    <End Role="CarCategories" Type="Model1.Store.CarCategories" Multiplicity="1" />
+    <End Role="Billings" Type="Model1.Store.Billings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarCategories">
+        <PropertyRef Name="categoryId" />
+      </Principal>
+      <Dependent Role="Billings">
+        <PropertyRef Name="CarCategories_categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarCategoriesBooking">
+    <End Role="CarCategories" Type="Model1.Store.CarCategories" Multiplicity="1" />
+    <End Role="Bookings" Type="Model1.Store.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarCategories">
+        <PropertyRef Name="categoryId" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="CarCategories_categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarCategoriesCar">
+    <End Role="CarCategories" Type="Model1.Store.CarCategories" Multiplicity="1" />
+    <End Role="Cars" Type="Model1.Store.Cars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarCategories">
+        <PropertyRef Name="categoryId" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="CarCategories_categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CityBooking">
+    <End Role="Cities" Type="Model1.Store.Cities" Multiplicity="1" />
+    <End Role="Bookings" Type="Model1.Store.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="cityId" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="City_cityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CityHub">
+    <End Role="Cities" Type="Model1.Store.Cities" Multiplicity="1" />
+    <End Role="Hubs" Type="Model1.Store.Hubs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="cityId" />
+      </Principal>
+      <Dependent Role="Hubs">
+        <PropertyRef Name="City_cityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerBilling">
+    <End Role="Customers" Type="Model1.Store.Customers" Multiplicity="1" />
+    <End Role="Billings" Type="Model1.Store.Billings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="customerId" />
+      </Principal>
+      <Dependent Role="Billings">
+        <PropertyRef Name="Customer_customerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerBooking">
+    <End Role="Customers" Type="Model1.Store.Customers" Multiplicity="1" />
+    <End Role="Bookings" Type="Model1.Store.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="customerId" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="Customer_customerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hub_Id">
+    <End Role="Hubs" Type="Model1.Store.Hubs" Multiplicity="1" />
+    <End Role="Cars" Type="Model1.Store.Cars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hubs">
+        <PropertyRef Name="hubId" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="Hub_hubId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HubBilling">
+    <End Role="Hubs" Type="Model1.Store.Hubs" Multiplicity="1" />
+    <End Role="Billings" Type="Model1.Store.Billings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hubs">
+        <PropertyRef Name="hubId" />
+      </Principal>
+      <Dependent Role="Billings">
+        <PropertyRef Name="Hub_hubId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HubBooking">
+    <End Role="Hubs" Type="Model1.Store.Hubs" Multiplicity="1" />
+    <End Role="Bookings" Type="Model1.Store.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hubs">
+        <PropertyRef Name="hubId" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="Hub_hubId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HubEmployee">
+    <End Role="Hubs" Type="Model1.Store.Hubs" Multiplicity="1" />
+    <End Role="Employees" Type="Model1.Store.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hubs">
+        <PropertyRef Name="hubId" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Hub_hubId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StateBooking">
+    <End Role="States" Type="Model1.Store.States" Multiplicity="1" />
+    <End Role="Bookings" Type="Model1.Store.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="stateId" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="State_stateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StateCity">
+    <End Role="States" Type="Model1.Store.States" Multiplicity="1" />
+    <End Role="Cities" Type="Model1.Store.Cities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="stateId" />
+      </Principal>
+      <Dependent Role="Cities">
+        <PropertyRef Name="State_stateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
